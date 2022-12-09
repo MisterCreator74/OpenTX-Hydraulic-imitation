@@ -1,5 +1,9 @@
 # OpenTX-Hydraulic-immitation
 
+### What is this script for?
+It is used to immitate Hydraulics with an Servo motor on Opentx without additional hardware. Therefore it basicly turns your joystick input into an slider. When you move the joystick the output value in- or decreases, but when the joystick is in center position it keeps the current value.
+
+
 ### How to install?
 1. download the hydr.lua
 2. turn your OpenTX radio on and connect it to your PC
@@ -16,8 +20,6 @@
 5. navigate to the Mix tab
 6. edit the channel mix and set the Hyd1 as channel source
 
-### What is this script for?
-It is used to immitate Hydraulics with an Servo motor on Opentx without additional hardware. Therefore it basicly turns your joystick input into an slider. When you move the joystick the output value in- or decreases, but when the joystick is in center position it keeps the current value.
 
 ### How does it work?
 the Script needs at least one input value (Joystick) and can handle up to four joystick axles at the same time. It takes the input value of that specific axle and uses a multiplier to reduce the input value, then adds that input value to a variable which is the output.
