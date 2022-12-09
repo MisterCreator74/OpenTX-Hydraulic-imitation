@@ -1,4 +1,6 @@
 # OpenTX-Hydraulic-immitation
+OpenTX main site: https://www.open-tx.org
+This script is an expansion for opentx. It could maybe also work for edgetx but I cannot guarantee.
 
 ### What is this script for?
 It is used to immitate Hydraulics with an Servo motor on Opentx without additional hardware. Therefore it basicly turns your joystick input into an slider. When you move the joystick the output value in- or decreases, but when the joystick is in center position it keeps the current value.
