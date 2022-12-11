@@ -33,7 +33,10 @@ local HydroVar = 0
 local HydroVar2 = 0
 local HydroVar3 = 0
 local HydroVar4 = 0
-
+local HydroVar5 = 0
+local HydroVar6 = 0
+local HydroVar7 = 0
+local HydroVar8 = 0
 
 
 -- Multiplier -> set lower for faster, more reactive Hydraulic; lower for slower, finer Hydraulic
@@ -46,16 +49,20 @@ local TheStickMultiplier = 0.05
 
 -- input Variables
 local input = {
-    {"Stick 1", SOURCE}, 
-	{"Stick 2", SOURCE},
-	{"Stick 3", SOURCE},
-	{"Stick 4", SOURCE}
+    {"Source 1", SOURCE}, 
+	{"Source 2", SOURCE},
+	{"Source 3", SOURCE},
+	{"Source 4", SOURCE},
+	{"Source 5", SOURCE}, 
+	{"Source 6", SOURCE},
+	{"Source 7", SOURCE},
+	{"Source 8", SOURCE}
 }
 
 
 
 --output Variables
-local output = { "Hyd1", "Hyd2", "Hyd3", "Hyd4"} 
+local output = { "Hyd1", "Hyd2", "Hyd3", "Hyd4", "Hyd5", "Hyd6", "Hyd7", "Hyd8"} 
 
 
 
@@ -64,7 +71,7 @@ local function compare(x)
     return x >= (-5) and x <= (5)
 end
 
-local function run (Ip1, Ip2, Ip3, Ip4)
+local function run (Ip1, Ip2, Ip3, Ip4, Ip5, Ip6, Ip7, Ip8)
 
 	if compare (Ip1) then
     Ip1 = 0 
@@ -81,6 +88,22 @@ local function run (Ip1, Ip2, Ip3, Ip4)
 	if compare (Ip4) then
 	Ip4 = 0 
   end
+  
+  	if compare (Ip5) then
+    Ip1 = 0 
+  end
+  
+	if compare (Ip6) then
+	Ip2 = 0 
+  end
+  
+	if compare (Ip7) then
+	Ip3 = 0 
+  end
+	
+	if compare (Ip8) then
+	Ip4 = 0 
+  end
 
 
 
@@ -89,6 +112,10 @@ local function run (Ip1, Ip2, Ip3, Ip4)
 	HydroVar2 = HydroVar2 + (Ip2 * TheStickMultiplier)
 	HydroVar3 = HydroVar3 + (Ip3 * TheStickMultiplier)
 	HydroVar4 = HydroVar4 + (Ip4 * TheStickMultiplier)
+	HydroVar5 = HydroVar5 + (Ip5 * TheStickMultiplier)
+	HydroVar6 = HydroVar6 + (Ip6 * TheStickMultiplier)
+	HydroVar7 = HydroVar7 + (Ip7 * TheStickMultiplier)
+	HydroVar8 = HydroVar8 + (Ip8 * TheStickMultiplier)
 
 
 
@@ -121,9 +148,36 @@ local function run (Ip1, Ip2, Ip3, Ip4)
     HydroVar4 = 1024
   end
   
+    if HydroVar5 < -1024 then
+    HydroVar5 = -1024
+  end
+	if HydroVar5 > 1024 then
+    HydroVar5 = 1024
+  end
+  
+    if HydroVar6 < -1024 then
+    HydroVar6 = -1024
+  end
+	if HydroVar6 > 1024 then
+    HydroVar6 = 1024
+  end
+  
+    if HydroVar7 < -1024 then
+    HydroVar7 = -1024
+  end
+	if HydroVar7 > 1024 then
+    HydroVar7 = 1024
+  end
+  
+    if HydroVar8 < -1024 then
+    HydroVar8 = -1024
+  end
+	if HydroVar8 > 1024 then
+    HydroVar8 = 1024
+  end
 
   
-    return HydroVar , HydroVar2, HydroVar3, HydroVar4
+    return HydroVar , HydroVar2, HydroVar3, HydroVar4, HydroVar5, HydroVar6, HydroVar7, HydroVar8
 end
 
 return { input=input, output=output, run=run }
