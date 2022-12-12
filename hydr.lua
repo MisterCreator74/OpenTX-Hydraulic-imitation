@@ -7,7 +7,7 @@
 -- Author: MisterCreator74	
 -- Web: http://mistercreator.de
 
--- Version: 1.7
+-- Version: 1.8
 -- Date: 2022 December 09
 
 -- Description
@@ -59,6 +59,7 @@ local input = {
 
 
 
+
 --output Variables
 local output = { "Hyd1", "Hyd2", "Hyd3", "Hyd4", "Hyd5", "Hyd6" } 
 
@@ -95,7 +96,14 @@ local function run (Ip1, Ip2, Ip3, Ip4, Ip5, Ip6, Ip7, Ip8)
 	Ip6 = 0 
   end
   
-
+  
+--Custom Multipliers set by Global Variable on the Remote
+TheStickMultiplier = model.getGlobalVariable (8,0)
+if (TheStickMultiplier ~= 0.05 and TheStickMultiplier ~= nil and TheStickMultiplier ~= 0) then
+    TheStickMultiplier = TheStickMultiplier / 1000 	
+  else 
+	TheStickMultiplier = 0.05	
+  end
 
 
 -- Hydraulic computing	
