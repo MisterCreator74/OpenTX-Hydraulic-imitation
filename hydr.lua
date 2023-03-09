@@ -23,7 +23,7 @@
 -- Select this script and configure inputs.
 
 -- Mixer Screen
--- Create a mix using one of Hyd1, Hyd2, Hyd3 or Hyd4 as input.
+-- Create a mix using one of Hyd1, Hyd2, Hyd3, Hyd4, Hyd5 or Hyd6 as input.
 -- Change as desired
 
 
