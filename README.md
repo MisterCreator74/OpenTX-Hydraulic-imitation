@@ -1,4 +1,4 @@
-# OpenTX-Hydraulic-immitation
+# OpenTX-Hydraulic-imitation
 OpenTX main site: https://www.open-tx.org
 This script is an expansion for opentx. It could maybe also work for edgetx but I cannot guarantee.
 
